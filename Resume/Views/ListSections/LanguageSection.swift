@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct LanguageSection: View {
-   @Binding var languages: [Resume.Language]
+    @Binding var languages: [Resume.Language]
     
     var body: some View {
         Section(header: Text("Languages"), content: {
-
+            
             ForEach(languages, id: \.language){ (language:Resume.Language) in
                 HStack {
                     VStack(alignment: .leading) {
@@ -30,7 +30,7 @@ struct LanguageSection: View {
                             Circle()
                                 .frame(width: 25, height: 25)
                                 .foregroundColor(i <= language.rating ?
-                                    .blue : .black)
+                                    .blue : .gray)
                         }
                     }
                 }

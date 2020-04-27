@@ -19,17 +19,3 @@ protocol NetworkSession {
     func loadData(from url: URL,
                   completionHandler: @escaping (Data?, Error?) -> Void)
 }
-
-//extension URLSession: NetworkSession {
-//    func loadData(from url: URL,
-//                  completionHandler: @escaping (Data?, Error?) -> Void) {
-//        return dataTaskPublisher(for: URLRequest(url: url))
-//            .mapError { error in
-//                .network(description: error)
-//        }
-//        .flatMap(maxPublishers: .max(1)) { pair  in
-//            .decode(pair.data)
-//        }
-//        .eraseToAnyPublisher()
-//    }
-//}

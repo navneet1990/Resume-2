@@ -9,30 +9,28 @@
 import Foundation
 import Combine
 
-class ResumeViewModal: ObservableObject, Identifiable {
-
-    private let headers: [String] = ["","Summary",
-                                     "Experience", "Technical Skills",
-                                     "Education","Languages"]
-
+class ResumeViewModal:ViewModelProtocol {
+    //MARK:- Publishers
     @Published var sectionsHeaders : [String] = []
     @Published var profile : [Resume.Profile] = []
     @Published var summary : [String] = []
     @Published var skills : [Resume.Skill] = []
-
     @Published var experience : [Resume.Experience] = []
     @Published var education : [Resume.Education] = []
     @Published var languages : [Resume.Language] = []
-
-    @Published var sections : [Any] = []
-
+    @Published var disableRefreshButton : Bool = true
+    
+    //MARK:- Private variables
+    private let headers: [String] = ["","Summary",
+                                     "Experience", "Technical Skills",
+                                     "Education","Languages"]
+    private var networkManager : NetworkManager
     private var disposables = Set<AnyCancellable>()
-
     private var resumeDetails: Resume?{
         didSet{
             sectionsHeaders = headers
             guard let details = resumeDetails else{ return }
-
+            
             profile = [details.profile]
             summary = details.summary
             experience = details.experience
@@ -40,29 +38,31 @@ class ResumeViewModal: ObservableObject, Identifiable {
             education = details.education
             languages = details.languages
         }
-
     }
-
-    private var networkManager : NetworkManager
+    
     init(session: URLSession = .shared ) {
         networkManager = NetworkManager(session: session)
         fetchResume()
     }
+}
 
-    private func fetchResume(){
+extension ResumeViewModal {
+    func fetchResume(){
+        disableRefreshButton = true
         // Publisher
         networkManager.fetchDataFromServer()
             .receive(on: DispatchQueue.main)
-
-            //        Subscrber
+            
+            // Subscriber
             .sink(
                 receiveCompletion: { [weak self] completion in
                     guard let self = self else { return }
                     switch completion {
-                    case .failure(let error):
-                        print(error.description)
+                    case .failure(_):
                         self.sectionsHeaders.removeAll()
+                        
                     case .finished:
+                        self.disableRefreshButton = false
                         break
                     }
                 }, receiveValue: { [weak self] data in
@@ -70,7 +70,10 @@ class ResumeViewModal: ObservableObject, Identifiable {
                     self.resumeDetails = data
             })
             .store(in: &disposables)
-
+    }
+    
+    func refreshBarButtonTapped() {
+        fetchResume()
     }
 }
 

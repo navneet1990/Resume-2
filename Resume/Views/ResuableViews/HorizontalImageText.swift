@@ -17,7 +17,7 @@ struct HorizontalImageText: View {
     var body: some View {
         HStack(spacing: hSpacing) {
             Image(systemName: imageName)
-
+            
             Text(text)
                 .font(font)
                 .foregroundColor(Color.gray)

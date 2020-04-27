@@ -23,9 +23,9 @@ extension NetworkManager: NetworkProtocol  {
     func fetchDataFromServer(urlString: String = Constants.Network.API) -> ResumeResult {
         return feteh(urlString: urlString)
     }
-
+    
     private func feteh(urlString: String) -> ResumeResult {
-
+        
         // Create a URL to load, and a URLSession to load it.
         guard let jsonURL = URL(string: urlString) else {
             return Fail(error: .invalidUrl).eraseToAnyPublisher()

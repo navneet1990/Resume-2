@@ -7,15 +7,18 @@
 //
 
 import Foundation
-
-protocol ViewModelProtocol : class {
-  //Variables
-//  var resume: Bindable<Resume?> {get set}
-//  var showAlert: Bindable<(SingleButtonAlert)?>{get set}
-//  var activityIndicatorDetails: Bindable<(Bool,String)>{get set}
-//  var shouldEnableRefresh: Bindable<Bool> {get set}
-  
-  // Methods
-  func fetchResume()
-  func refreshBarButtonTapped()
+import Combine
+protocol ViewModelProtocol : ObservableObject {
+    //Variables
+    var sectionsHeaders : [String] {get set}
+    var profile : [Resume.Profile] {get set}
+    var summary : [String] {get set}
+    var skills : [Resume.Skill] {get set}
+    var experience : [Resume.Experience] {get set}
+    var education : [Resume.Education] {get set}
+    var languages : [Resume.Language] {get set}
+    var disableRefreshButton : Bool {get set}
+    
+    // Methods
+    func refreshBarButtonTapped()
 }

@@ -7,6 +7,7 @@
 //
 import Foundation
 import Combine
+
 // Network Protocol
 protocol NetworkProtocol : class {
     /// Method to fetch data server

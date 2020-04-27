@@ -11,19 +11,19 @@ import SwiftUI
 import Combine
 
 class ImageLoader: ObservableObject {
-
+    
     @Published var image: UIImage?
     private var urlString: String
     private var cancellable: AnyCancellable?
-
+    
     deinit {
         cancellable?.cancel()
     }
-
+    
     init(url: String?) {
         self.urlString = url ?? ""
     }
-
+    
     func load() {
         guard let url = URL(string: urlString) else { return }
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
@@ -32,7 +32,7 @@ class ImageLoader: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: \.image, on: self)
     }
-
+    
     func cancel() {
         cancellable?.cancel()
     }

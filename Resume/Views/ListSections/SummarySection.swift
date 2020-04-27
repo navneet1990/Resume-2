@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SummarySection: View {
-   @Binding var summary: [String]
+    @Binding var summary: [String]
     
     var body : some View {
         Section(header: Text("Summary")) {

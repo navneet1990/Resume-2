@@ -15,7 +15,6 @@ struct Resume: Codable,Identifiable {
     var languages: [Language]
     var education: [Education]
 
-
     struct Profile: Codable, Identifiable {
         private var location : Location
         
@@ -58,7 +57,6 @@ struct Resume: Codable,Identifiable {
         var skills: String {
             return keywords.joined(separator: ", ")
         }
-
     }
 
     struct Language : Codable, Identifiable{

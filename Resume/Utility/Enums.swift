@@ -9,19 +9,19 @@
 import Foundation
 
 enum ImageIdefifiers {
-  static let calendar = "calendar"
-  static let location = "location"
-  static let phone = "phone"
-  static let placeholder = "placeHolder"
+    static let calendar = "calendar"
+    static let location = "location"
+    static let phone = "phone"
+    static let placeholder = "placeHolder"
 }
 
 enum SectionTypes: Int {
-  case profile
-  case summary
-  case experience
-  case skills
-  case education
-  case languages
+    case profile
+    case summary
+    case experience
+    case skills
+    case education
+    case languages
 }
 
 

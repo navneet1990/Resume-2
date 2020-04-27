@@ -39,7 +39,7 @@ extension ErrorResult: LocalizedError {
             return NSLocalizedString("Network", comment: "")
         case .parsing(description: _):
             return NSLocalizedString("Parsing", comment: "")
-
+            
         }
     }
 }

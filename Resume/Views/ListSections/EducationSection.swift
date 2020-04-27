@@ -10,21 +10,21 @@ import SwiftUI
 
 struct EducationSection: View {
     @Binding var education: [Resume.Education]
-
+    
     var body: some View {
         Section(header: Text("Education"), content: {
             ForEach(education, id: \.duration){ (education: Resume.Education) in
-
+                
                 VStack(alignment: .leading, spacing: 5, content: {
                     // Degree
                     Text(education.specialization)
                         .font(.headline)
                         .fontWeight(.bold)
                         .lineLimit(nil)
-
+                    
                     University(school: education.school,
                                score: education.cgpa)
-
+                    
                     HorizontalImageText(imageName: "calendar",
                                         text: education.duration,
                                         font: .caption,
@@ -39,12 +39,12 @@ struct EducationSection: View {
 private struct University: View {
     private let school: String
     private let score: String
-
+    
     init(school: String, score: Float) {
         self.school = school
         self.score = String.init(score)
     }
-
+    
     var body: some View {
         HStack(spacing: 30.0) {
             // University

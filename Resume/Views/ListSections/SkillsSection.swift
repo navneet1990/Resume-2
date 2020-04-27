@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SkillsSection: View {
-  @Binding var skills: [Resume.Skill]
+    @Binding var skills: [Resume.Skill]
     
     var body: some View {
         Section(header: Text("Techinical Skills")){

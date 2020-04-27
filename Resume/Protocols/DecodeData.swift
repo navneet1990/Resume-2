@@ -10,14 +10,12 @@ import Foundation
 import Combine
 
 protocol DecodeData {
-    
     /// Decode the data to Resume Object
     /// - Parameter data: Data to be decoded
     func decode(_ data: Data) -> AnyPublisher<Resume,ErrorResult>
 }
 
 extension  DecodeData{
-    
     func decode(_ data: Data) -> AnyPublisher<Resume, ErrorResult> {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970

@@ -14,6 +14,7 @@ struct ResumeHomeView: View {
     init() {
         viewModel = ResumeViewModal.init()
     }
+    
     var body: some View {
         NavigationView {
             List {
@@ -22,18 +23,23 @@ struct ResumeHomeView: View {
                 }
                 else{
                     ForEach.init(0..<viewModel.sectionsHeaders.count) { index in
-                        
                         self.buildSection(at: index)
                             .padding(.horizontal, 10)
-                        
                     }
-                    
                 }
             }
-                
-            .navigationBarTitle("Resume") }
+            .navigationBarTitle("Resume")
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.viewModel.fetchResume()
+                }) {
+                    Image(systemName: "arrow.clockwise")
+                }
+            ).disabled(viewModel.disableRefreshButton)
+        }
     }
 }
+
 
 private extension ResumeHomeView {
     var emptySection: some View {
