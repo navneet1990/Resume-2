@@ -3,12 +3,13 @@
 # iOS - Resume 2.0 
 
 [![Swift](https://img.shields.io/badge/Swift-5.1-orange.svg)](https://swift.org)
-[![Xcode](https://img.shields.io/badge/Xcode-11.4.1-blue.svg)](https://developer.apple.com/xcode)
+[![Xcode](https://img.shields.io/badge/Xcode-11.3-blue.svg)](https://developer.apple.com/xcode)
 
 This project is developed using SwiftUI and Combine framework to show the user own resume .
 Below is screenshot how app looks:
 
-<img height="480" src="https://github.com/navneet1990/Resume/blob/master/Resume/Resources/DemoScreenshot/screenShot.png" alt="demo of resume">        <img height="480" src="https://github.com/navneet1990/Resume/blob/master/Resume/Resources/DemoScreenshot/screenshot2.png" alt="demo of resume">
+<img height="480" src="https://github.com/navneet1990/Resume-2/blob/master/Resume/Supporting%20Files/Assets.xcassets/DemoScreenshot/screenshot1.png" alt="demo of resume">  
+<img height="480" src="https://github.com/navneet1990/Resume-2/blob/master/Resume/Supporting%20Files/Assets.xcassets/DemoScreenshot/screenshot2.png" alt="demo of resume">
 
 ## Table of Contents
 
@@ -28,7 +29,7 @@ Below is screenshot how app looks:
 ## Requirements
 
 - iOS 13+
-- Xcode 11.1+
+- Xcode 11.3+
 - Swift 5.1
 
 ## Resume Contents:
