@@ -9,7 +9,7 @@ This project is developed using SwiftUI and Combine framework to show the user o
 Below is screenshot how app looks:
 
 <img align="left" height="480" src="https://github.com/navneet1990/Resume-2/blob/master/Resume/Supporting%20Files/Assets.xcassets/DemoScreenshot/screenshot1.png" alt="demo of resume">  
-<img align="right" height="480" src="https://github.com/navneet1990/Resume-2/blob/master/Resume/Supporting%20Files/Assets.xcassets/DemoScreenshot/screenshot2.png" alt="demo of resume">
+<img align="center" height="480" src="https://github.com/navneet1990/Resume-2/blob/master/Resume/Supporting%20Files/Assets.xcassets/DemoScreenshot/screenshot2.png" alt="demo of resume">
 
 ## Table of Contents
 
