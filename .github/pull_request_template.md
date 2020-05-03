@@ -3,8 +3,7 @@
 
 # Implementation 
 - summary of the implementation
-- change 1
-- change 2
+- Describe your code changes in detail for reviewers. 
 
 # Type of change
 Please delete options that are not relevant.
